@@ -16,10 +16,10 @@ class AuthInterceptor extends Interceptor {
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    debugPrint('ERROR[${err.response?.data.status}] => PATH: ${err.requestOptions.path}');
+    debugPrint('ERROR[${err.response?.statusCode}] => PATH: ${err.requestOptions.path}');
 
-    if (err.response?.data.status == 401) {
-      
+    if (err.response?.statusCode == 401) {
+      debugPrint('LOG: Token inválido ou expirado.');
     }
 
     return handler.next(err);
