@@ -45,7 +45,7 @@ class _ProductsListState extends State<ProductsList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Estoque - Estopay'),
+        title: const Text('Estoque - Esto-Simple'),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -74,8 +74,7 @@ class _ProductsListState extends State<ProductsList> {
               return ProductCard(
                 product: product,
                 onEdit: () {
-                  // Abre a tela de formulário passando o produto (Modo Edição)
-                    context.push('/form', extra: product); // Passa o produto no 'extra'
+                    context.push('/form', extra: product);
                 },
                 onDelete: () => _confirmDelete(context, product.id),
               );
@@ -84,7 +83,7 @@ class _ProductsListState extends State<ProductsList> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.push('/form'), // Vai para o formulário vazio
+        onPressed: () => context.push('/form'),
         child: const Icon(Icons.add),
       ),
     );

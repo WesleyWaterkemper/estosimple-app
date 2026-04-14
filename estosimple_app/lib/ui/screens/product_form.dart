@@ -5,7 +5,7 @@ import '../../providers/products_provider.dart';
 import '../widgets/custom_text_field.dart';
 
 class ProductForm extends StatefulWidget {
-  final Product? product; // Se for nulo, é CREATE. Se tiver dados, é UPDATE.
+  final Product? product;
 
   const ProductForm({super.key, this.product});
 
@@ -47,7 +47,6 @@ class _ProductFormState extends State<ProductForm> {
 
     final provider = context.read<ProductsProvider>();
 
-    // Monta o objeto Produto (usa ID 0 para novo, ou o ID existente para edição)
     final productData = Product(
       id: isEditing ? widget.product!.id : 0, 
       name: _nameController.text,
@@ -71,7 +70,6 @@ class _ProductFormState extends State<ProductForm> {
 
   @override
   Widget build(BuildContext context) {
-    // Usamos o watch aqui apenas para ouvir o estado de loading e desativar o botão
     final isLoading = context.watch<ProductsProvider>().isLoading;
 
     return Scaffold(
@@ -116,7 +114,7 @@ class _ProductFormState extends State<ProductForm> {
               ),
               child: isLoading 
                   ? const SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2))
-                  : Text(isEditing ? 'Atualizar Produto' : 'Salvar Produto'),
+                  : Text(isEditing ? 'Atualizar' : 'Salvar'),
             ),
           ],
         ),
