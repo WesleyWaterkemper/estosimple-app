@@ -6,7 +6,7 @@ class ApiService {
 
   ApiService() : _dio = Dio(
     BaseOptions(
-      baseUrl: 'http://localhost:5202/api',
+      baseUrl: 'https://estopay-app-production.up.railway.app/api',
       connectTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 10),
       headers: {
