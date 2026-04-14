@@ -26,7 +26,7 @@ Siga os passos abaixo para executar o aplicativo em seu ambiente local:
    git clone [URL_DO_SEU_REPOSITORIO]
 
 2. **Entrar na pasta do projeto:**
-   cd estopay_app
+   cd estosimple_app
 
 3. **Instalar as dependências:**
    flutter pub get
