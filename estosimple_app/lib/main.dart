@@ -46,8 +46,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Esto-Simple',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color(0xFF009688),
+          primary: const Color(0xFF00796B),
+          secondary: const Color(0xFF1D3557),
+          surface: const Color(0xFFF8F9FA),
+          error: const Color(0xFFE63946),
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF00796B),
+          foregroundColor: Colors.white,
+          centerTitle: true,
+          elevation: 0,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF00796B),
+            foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFF1D3557),
+          foregroundColor: Colors.white,
+          elevation: 4,
+        ),
       ),
       // Vincula o roteador configurado acima
       routerConfig: _router,
